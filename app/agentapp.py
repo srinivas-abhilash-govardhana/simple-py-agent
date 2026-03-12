@@ -12,5 +12,5 @@ def heartbeat():
 @app.post("/query")
 async def query(query: CreateQueryRequest):
     print(f"Query: {query.query}")
-    response = await agent_service.execute_search_query(query.query)
+    response = await agent_service.generate_prep_strategy(query.query)
     return {"message": response}
